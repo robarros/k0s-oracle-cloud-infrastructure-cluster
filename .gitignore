@@ -1,0 +1,11 @@
+.DS_Store
+.env
+*.info
+./terraform/.terraform
+*.tfvars
+./terraform/variaveis.tfvars
+*.terraform
+.tfplan
+*.tfstate
+*.hcl
+*.tfstate.backup

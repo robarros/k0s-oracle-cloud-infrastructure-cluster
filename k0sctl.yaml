@@ -1,0 +1,39 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-cluster
+spec:
+  hosts:
+  - ssh:
+      address: XXX.XXX.XXX.XXX
+      user: ubuntu
+      port: 22
+      keyPath: /home/ronaldo/.ssh/id_rsa
+    role: controller+worker 
+  - ssh:
+      address: XXX.XXX.XXX.XXX
+      user: ubuntu
+      port: 22
+      keyPath: /home/ronaldo/.ssh/id_rsa
+    role: worker
+  - ssh:
+      address: XXX.XXX.XXX.XXX
+      user: ubuntu
+      port: 22
+      keyPath: /home/ronaldo/.ssh/id_rsa
+    role: worker
+  - ssh:
+      address: XXX.XXX.XXX.XXX
+      user: ubuntu
+      port: 22
+      keyPath: /home/ronaldo/.ssh/id_rsa
+    role: worker
+  k0s:
+    version: 1.25.3+k0s.0
+    dynamicConfig: false
+
+
+# https://computingforgeeks.com/deploy-k0s-kubernetes-on-rocky-linux-9-using-k0sctl/
+
+# https://techviewleo.com/deploy-k0s-kubernetes-cluster-on-linux-using-k0sctl/
+

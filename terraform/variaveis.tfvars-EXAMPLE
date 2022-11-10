@@ -1,0 +1,12 @@
+region              = "us-ashburn-1"
+tenancy_ocid        = ""
+user_ocid           = ""
+compartment_id      = ""
+fingerprint         = ""
+# PATH FILE PEM FOLDER /user/.oci/*.pem
+private_key_path    = ""
+# KEY PUBLIC SSH KEY /user/.ssh/*.pub
+ssh_authorized_keys = [""]
+
+# DOC FIND VARIABLES
+# https://www.oracle.com/br/technical-resources/articles/cloudcomp/terraform-com-cloud.html
