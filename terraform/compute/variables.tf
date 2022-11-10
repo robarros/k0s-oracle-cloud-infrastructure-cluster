@@ -24,6 +24,12 @@ variable "permit_k0s_api_nsg_id" {
   
 }
 
+variable "allow_port_nodes_id" {
+  description = "Allow Nodes Port"
+  type        = string
+  
+}
+
 variable "ssh_authorized_keys" {
   description = "List of authorized SSH keys"
   type        = list(any)
