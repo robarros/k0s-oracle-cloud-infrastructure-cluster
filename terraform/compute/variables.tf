@@ -52,4 +52,15 @@ locals {
       "ssh_authorized_keys" = join("\n", var.ssh_authorized_keys)
     }
   }
+  worker_instance_x86_config = {
+    shape_id = "VM.Standard.E2.1.Micro"
+    ocpus    = 1
+    ram      = 1
+    // Canonical-Ubuntu-22.04-Minimal-2022.08.16-0
+    source_id   = "ocid1.image.oc1.iad.aaaaaaaas6qul34auoiybzgbd4dw2irxix73hgps622rk6d7oawzlrtpfiwa"
+    source_type = "image"
+    metadata = {
+      "ssh_authorized_keys" = join("\n", var.ssh_authorized_keys)
+    }
+  }
 }
