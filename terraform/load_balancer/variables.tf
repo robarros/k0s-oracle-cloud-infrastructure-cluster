@@ -15,5 +15,5 @@ variable "cluster_subnet_id" {
 
 variable "workers" {
   description = "The worker node count."
-  type        = list  
+  type        = list(any)
 }

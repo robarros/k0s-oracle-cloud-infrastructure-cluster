@@ -62,12 +62,6 @@ resource "oci_core_network_security_group" "permit_k0s_api" {
   display_name   = "K0s API"
 }
 
-resource "oci_core_network_security_group" "allow_port_nodes" {
-  compartment_id = var.compartment_id
-  vcn_id         = oci_core_vcn.cluster_network.id
-  display_name   = "K8s Nodes Port"
-}
-
 resource "oci_core_network_security_group_security_rule" "permit_ssh" {
   network_security_group_id = oci_core_network_security_group.permit_ssh.id
   protocol                  = "6" // TCP
@@ -95,18 +89,3 @@ resource "oci_core_network_security_group_security_rule" "permit_k0s_api" {
   }
   direction = "INGRESS"
 }
-
-resource "oci_core_network_security_group_security_rule" "allow_port_nodes" {
-  network_security_group_id = oci_core_network_security_group.allow_port_nodes.id
-  protocol                  = "6" // TCP
-  source                    = "0.0.0.0/0"
-  source_type               = "CIDR_BLOCK"
-  tcp_options {
-    destination_port_range {
-      max = 32768
-      min = 30000
-    }
-  }
-  direction = "INGRESS"
-}
-

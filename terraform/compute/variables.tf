@@ -21,13 +21,7 @@ variable "permit_ssh_nsg_id" {
 variable "permit_k0s_api_nsg_id" {
   description = "NSG to permit K0S API"
   type        = string
-  
-}
 
-variable "allow_port_nodes_id" {
-  description = "Allow Nodes Port"
-  type        = string
-  
 }
 
 variable "ssh_authorized_keys" {

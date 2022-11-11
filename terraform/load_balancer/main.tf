@@ -1,8 +1,8 @@
 resource "oci_load_balancer_load_balancer" "k0s_load_balancer" {
-  compartment_id             = var.compartment_id
-  display_name               = "k0s-load-balancer"
-  shape                      = "flexible"
-  subnet_ids                 = [var.cluster_subnet_id]
+  compartment_id = var.compartment_id
+  display_name   = "k0s-load-balancer"
+  shape          = "flexible"
+  subnet_ids     = [var.cluster_subnet_id]
 
   ip_mode    = "IPV4"
   is_private = true
@@ -35,9 +35,9 @@ resource "oci_load_balancer_backend_set" "k0s_http_backend_set" {
 }
 
 resource "oci_load_balancer_backend" "k0s_http_backend" {
-    depends_on = [
-      oci_load_balancer_backend_set.k0s_http_backend_set
-    ]
+  depends_on = [
+    oci_load_balancer_backend_set.k0s_http_backend_set
+  ]
   count            = length(var.workers)
   backendset_name  = "k0s-http-backend-set"
   ip_address       = var.workers[count.index].private_ip
